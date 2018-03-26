@@ -4,7 +4,7 @@
 #Storing curent date in YY-MM-DD format
 CURRENT_DATE=`date +%Y-%m-%d`
 
-#Print EC2 instances with stopped state from last n no of days and store it in a file
+#Print EC2 instances with stopped state and store it in a file
 aws ec2 describe-instances --filters "Name=instance-state-name,Values=stopped"  --query 'Reservations[].Instances[].[InstanceId,LaunchTime]' --output text > Instanceinfo.txt
 
 echo "<html> <table width="300" border="1" cellspacing="0" cellpadding="3" bordercolor="#980000"> <tr> <th> InstanceID </th> <th> Stopped Time </th> </tr>" > htmlreport.html
