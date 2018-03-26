@@ -1,6 +1,6 @@
 job('STOPPED_TIME_EC2') {
     parameters {
-        StringParam('No_of_Days', true)
+        stringParam('No_of_Days', '0', 'Enter no of days')
     }
     scm {
         git {
