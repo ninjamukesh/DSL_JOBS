@@ -56,6 +56,7 @@ do
  then
  HTML_ROWS ${Row_No}
  fi
+ Row_No=' expr $Row_No + 1 '
 
 done <"$file"
 
