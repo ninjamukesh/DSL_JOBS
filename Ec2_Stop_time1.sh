@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #Taking input from the user. Will check if any EC2 instance is stopped from the last 'n' no of days
-echo "Please enter the no of days"
+#echo "Please enter the no of days"
 
-read No_of_Days
+#read No_of_Days
 
 #Storing curent date in YY-MM-DD format
 CURRENT_DATE=`date +%Y-%m-%d`
