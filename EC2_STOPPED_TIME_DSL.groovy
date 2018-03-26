@@ -1,4 +1,7 @@
 job('STOPPED_TIME_EC2') {
+    parameters {
+        StringParam('No_of_Days', true)
+    }
     scm {
         git {
             remote
