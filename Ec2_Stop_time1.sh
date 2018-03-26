@@ -29,14 +29,13 @@ echo "<html> <table width="300" border="1" cellspacing="0" cellpadding="3" borde
 HTML_ROWS()
 {
  Instance_no=$1
- Column_no=1
  echo "<tr>" >> htmlreport.html 
  echo "<td>" >> htmlreport.html
  awk "NR==$Instance_no {print \$1}" Instanceinfo.txt >> htmlreport.html
  echo "</td>" >> htmlreport.html
  echo "<td>" >> htmlreport.html
  awk "NR==$Instance_no {print \$2}" Instanceinfo.txt >> htmlreport.html
- echo "</td>" >> htmlreport.html
+ echo "</td> </tr>" >> htmlreport.html
 
 }
 
@@ -56,8 +55,8 @@ do
  then
  HTML_ROWS ${Row_No}
  fi
- Row_No=' expr $Row_No + 1 '
+ Row_No=` expr $Row_No + 1 `
 
 done <"$file"
 
-echo "</tr> </table> </html>" >> htmlreport.html
+echo "</table> </html>" >> htmlreport.html
